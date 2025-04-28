@@ -36,7 +36,7 @@ export const AppContextProvider = ({ children }) => {
     const updateCart = async () => {
       try {
         if (user) {
-          const { data } = await axios.post("https://ecoms-back.onrender.com/api/cart/update", {
+          const { data } = await axios.post("https://ecoms-back.onrender.com/cart/update", {
             cartItems,
             userId: user._id,
           });
@@ -54,7 +54,7 @@ export const AppContextProvider = ({ children }) => {
  
   const fetchUser = async () => {
     try {
-      const { data } = await axios.get("https://ecoms-back.onrender.com/api/user/is-auth");
+      const { data } = await axios.get("https://ecoms-back.onrender.com/user/is-auth");
       if (data.success) {
         setUser(data.user);
         if (data.user.cartItems && Object.keys(data.user.cartItems).length > 0) {
@@ -68,7 +68,7 @@ export const AppContextProvider = ({ children }) => {
 
   const fetchSeller = async () => {
     try {
-      const { data } = await axios.get("https://ecoms-back.onrender.com/api/seller/is-auth");
+      const { data } = await axios.get("https://ecoms-back.onrender.com/seller/is-auth");
       setIsSeller(data.success);
     } catch {
       setIsSeller(false);
@@ -77,7 +77,7 @@ export const AppContextProvider = ({ children }) => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get("https://ecoms-back.onrender.com/api/product/list");
+      const { data } = await axios.get("https://ecoms-back.onrender.com/product/list");
       if (data.success) setProducts(data.products);
       else toast.error(data.message);
     } catch (err) {
