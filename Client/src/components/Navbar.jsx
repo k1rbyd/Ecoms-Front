@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { assets } from '../assets/assets';
+import { assets } from '../assets/assets.js';
 import { useAppContext } from '../context/AppContext.jsx';
 import { useEffect } from 'react';
 
