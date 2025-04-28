@@ -9,7 +9,8 @@ export default defineConfig({
     tailwindcss()
   ],
   server: {
-    host: '0.0.0.0',    // Make Vite listen on all network interfaces
-    port: process.env.PORT || 5173  // Use Render's assigned port or fallback to 5173 for local dev
+    host: '0.0.0.0', // Listen on all network interfaces
+    port: process.env.PORT || 5173, // Use Render's port or fallback to 5173 for local dev
+    allowedHosts: ['ecoms-front.onrender.com', 'localhost'] // Allow your deployed host and localhost for dev
   }
 })
