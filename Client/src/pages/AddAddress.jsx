@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { assets } from '../assets/assets';
+import { assets } from '../assets/assets.js';
 import { useAppContext } from '../context/AppContext.jsx';
 import toast from 'react-hot-toast';
 
